@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { AwakeItem, AwakeMagnetic, AwakeStagger } from "@/components/unik/awake-motion";
 import { GsapIllustration } from "@/components/unik/gsap-illustration";
 import { motion } from "motion/react";
 import {
@@ -121,9 +122,9 @@ const Services = () => {
                 início ao fim.
               </p>
             </div>
-            <div className="grid gap-3">
+            <AwakeStagger className="grid gap-3" delay={0.08}>
               {operationPillars.map((pillar) => (
-                <div
+                <AwakeItem
                   key={pillar.label}
                   className="flex items-center gap-3 rounded-[8px] border border-[#d7deea] bg-white/78 px-4 py-3"
                 >
@@ -133,9 +134,9 @@ const Services = () => {
                   <p className="text-sm font-semibold text-[#23324d]">
                     {pillar.label}
                   </p>
-                </div>
+                </AwakeItem>
               ))}
-            </div>
+            </AwakeStagger>
             <GsapIllustration>
               <Image
                 src="/images/services-illustration.png"
@@ -159,8 +160,9 @@ const Services = () => {
                   duration: 0.5,
                   ease: "easeInOut"
                 }}
+                whileHover={{ y: -6 }}
               >
-                <Card className="overflow-hidden rounded-[8px] border-[#d7deea] bg-white/90 p-0 shadow-[0_24px_65px_-52px_rgba(6,42,99,0.72)]">
+                <Card className="awake-sheen overflow-hidden rounded-[8px] border-[#d7deea] bg-white/90 p-0 shadow-[0_24px_65px_-52px_rgba(6,42,99,0.72)]">
                   <CardContent className="grid gap-0 p-0 md:grid-cols-[0.9fr_1.1fr]">
                     <div className={`flex flex-col justify-between gap-7 p-6 md:p-8 ${service.panel}`}>
                       <div className="flex flex-col gap-5">
@@ -225,17 +227,19 @@ const Services = () => {
                     projeto.
                   </p>
                 </div>
-                <Button
-                  asChild
-                  className="group h-12 w-fit rounded-full bg-white p-1 ps-5 text-[#071638] hover:bg-white/92"
-                >
-                  <a href="#contato" className="flex items-center gap-4">
-                    <span>Montar proposta</span>
-                    <div className="rounded-full bg-[#f47c20] p-3 text-white transition-transform duration-300 ease-in-out group-hover:rotate-45">
-                      <ArrowUpRight size={16} />
-                    </div>
-                  </a>
-                </Button>
+                <AwakeMagnetic className="w-fit">
+                  <Button
+                    asChild
+                    className="group h-12 w-fit rounded-full bg-white p-1 ps-5 text-[#071638] hover:bg-white/92"
+                  >
+                    <a href="#contato" className="flex items-center gap-4">
+                      <span>Montar proposta</span>
+                      <div className="rounded-full bg-[#f47c20] p-3 text-white transition-transform duration-300 ease-in-out group-hover:rotate-45">
+                        <ArrowUpRight size={16} />
+                      </div>
+                    </a>
+                  </Button>
+                </AwakeMagnetic>
               </div>
             </div>
           </div>

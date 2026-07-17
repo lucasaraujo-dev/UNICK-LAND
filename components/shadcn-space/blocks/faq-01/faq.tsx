@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger
 } from "@/components/ui/accordion";
+import { AwakeReveal } from "@/components/unik/awake-motion";
 import { PlusIcon } from "lucide-react";
 
 const FAQ_DATA = [
@@ -38,7 +39,7 @@ export default function Faq() {
   return (
     <section id="faq" className="py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-16">
-        <div className="rounded-[8px] bg-white px-5 py-8 shadow-[0_24px_80px_-64px_rgba(6,42,99,0.75)] sm:px-8 lg:px-10 lg:py-12">
+        <AwakeReveal className="rounded-[8px] bg-white px-5 py-8 shadow-[0_24px_80px_-64px_rgba(6,42,99,0.75)] sm:px-8 lg:px-10 lg:py-12">
           <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
             <div className="flex flex-col gap-4">
               <h2 className="max-w-xl text-4xl font-semibold tracking-tight text-[#071638] sm:text-5xl">
@@ -55,7 +56,7 @@ export default function Faq() {
                 <AccordionItem
                   key={faq.question}
                   value={`item-${index}`}
-                  className="rounded-[8px] border border-[#d7deea] bg-[#f8fafd] px-0 transition-colors data-[state=open]:bg-white"
+                  className="awake-sheen rounded-[8px] border border-[#d7deea] bg-[#f8fafd] px-0 transition-colors data-[state=open]:bg-white"
                 >
                   <AccordionTrigger className="grid min-h-18 grid-cols-[1fr_2.75rem] items-center gap-4 px-5 py-0 text-left text-base font-semibold text-[#071638] hover:no-underline [&>svg:last-child]:hidden sm:text-lg">
                     <span>{faq.question}</span>
@@ -70,7 +71,7 @@ export default function Faq() {
               ))}
             </Accordion>
           </div>
-        </div>
+        </AwakeReveal>
       </div>
     </section>
   );

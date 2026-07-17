@@ -80,8 +80,10 @@ const AboutUs = ({
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-4">
               {aboutusData.map((item, index) => (
-                <div
+                <motion.div
                   key={index}
+                  whileHover={{ y: -4, scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 180, damping: 18 }}
                   className={cn(
                     "flex items-center gap-3 px-6 py-2 rounded-full",
                     item.color
@@ -95,7 +97,7 @@ const AboutUs = ({
                   >
                     {item.title}
                   </span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
@@ -105,8 +107,10 @@ const AboutUs = ({
           >
             {statisticsCounter?.map((value, index) => {
               return (
-                <div
+                <motion.div
                   key={index}
+                  whileHover={{ y: -6 }}
+                  transition={{ type: "spring", stiffness: 160, damping: 18 }}
                   className="relative px-6 py-5 sm:py-10 gap-3 flex flex-col items-center justify-center"
                 >
                   {index !== 0 && (
@@ -125,7 +129,7 @@ const AboutUs = ({
                   <p className="text-base font-normal text-muted-foreground text-center">
                     {value.title}
                   </p>
-                </div>
+                </motion.div>
               );
             })}
           </div>

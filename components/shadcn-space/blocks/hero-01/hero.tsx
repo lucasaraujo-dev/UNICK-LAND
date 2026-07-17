@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { AwakeKineticStrip, AwakeMagnetic } from "@/components/unik/awake-motion";
 import { GsapIllustration } from "@/components/unik/gsap-illustration";
 import { motion } from "motion/react";
 import {
@@ -43,52 +44,78 @@ function HeroSection({ avatarList }: HeroSectionProps) {
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          transition={{ duration: 0.8, ease: [0.21, 0.47, 0.32, 0.98] }}
           className="flex flex-col items-start gap-7"
         >
           <div className="flex flex-col gap-5">
-            <h1 className="max-w-3xl text-4xl font-semibold leading-[0.98] tracking-tight text-[#071638] sm:text-5xl lg:text-6xl">
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.85, ease: [0.21, 0.47, 0.32, 0.98] }}
+              className="max-w-3xl text-4xl font-semibold leading-[0.98] tracking-tight text-[#071638] sm:text-5xl lg:text-6xl"
+            >
               Soluções que constroem confiança para sua operação.
-            </h1>
-            <p className="max-w-2xl text-base leading-relaxed text-[#53617a] sm:text-lg">
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.72,
+                delay: 0.12,
+                ease: [0.21, 0.47, 0.32, 0.98]
+              }}
+              className="max-w-2xl text-base leading-relaxed text-[#53617a] sm:text-lg"
+            >
               A UNIK atende demandas de facilities, limpeza, suporte e
               propriedade com matriz no Rio de Janeiro, filiais operacionais e
               estrutura pronta para diferentes setores em todo o Brasil.
-            </p>
+            </motion.p>
           </div>
 
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Button
-              asChild
-              className="group relative h-12 overflow-hidden rounded-full bg-[#062a63] p-1 ps-6 pe-14 text-sm font-semibold text-white transition-all duration-500 hover:bg-[#083577] hover:ps-14 hover:pe-6"
-            >
-              <a href="#contato">
-                <span className="relative z-10">Solicitar proposta</span>
-                <span className="absolute right-1 top-1 flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#062a63] transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
-                  <ArrowUpRight size={16} />
-                </span>
-              </a>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="h-12 rounded-full border-[#c9d4e4] bg-white/70 px-6 text-sm font-semibold text-[#062a63] hover:bg-white"
-            >
-              <a href="#servicos">Ver serviços</a>
-            </Button>
+            <AwakeMagnetic className="w-fit">
+              <Button
+                asChild
+                className="awake-sheen group relative h-12 overflow-hidden rounded-full bg-[#062a63] p-1 ps-6 pe-14 text-sm font-semibold text-white transition-all duration-500 hover:bg-[#083577] hover:ps-14 hover:pe-6"
+              >
+                <a href="#contato">
+                  <span className="relative z-10">Solicitar proposta</span>
+                  <span className="absolute right-1 top-1 flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#062a63] transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
+                    <ArrowUpRight size={16} />
+                  </span>
+                </a>
+              </Button>
+            </AwakeMagnetic>
+            <AwakeMagnetic className="w-fit">
+              <Button
+                asChild
+                variant="outline"
+                className="h-12 rounded-full border-[#c9d4e4] bg-white/70 px-6 text-sm font-semibold text-[#062a63] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white"
+              >
+                <a href="#servicos">Ver serviços</a>
+              </Button>
+            </AwakeMagnetic>
           </div>
 
           <div className="grid w-full gap-3 sm:grid-cols-3">
-            {highlights.map((item) => (
-              <div
+            {highlights.map((item, index) => (
+              <motion.div
                 key={item.label}
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  delay: 0.3 + index * 0.08,
+                  duration: 0.58,
+                  ease: [0.21, 0.47, 0.32, 0.98]
+                }}
+                whileHover={{ y: -5 }}
                 className="flex min-h-20 items-center gap-3 rounded-[8px] border border-[#d7deea] bg-white/74 p-4 shadow-[0_24px_50px_-42px_rgba(7,22,56,0.6)] backdrop-blur"
               >
                 <item.icon className="h-5 w-5 shrink-0 text-[#f47c20]" />
                 <p className="text-sm font-medium leading-snug text-[#23324d]">
                   {item.label}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.div>
@@ -96,7 +123,11 @@ function HeroSection({ avatarList }: HeroSectionProps) {
         <motion.div
           initial={{ opacity: 0, y: 34, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.9, delay: 0.12, ease: "easeInOut" }}
+          transition={{
+            duration: 0.9,
+            delay: 0.12,
+            ease: [0.21, 0.47, 0.32, 0.98]
+          }}
           className="relative"
         >
           <GsapIllustration
@@ -113,7 +144,11 @@ function HeroSection({ avatarList }: HeroSectionProps) {
             />
           </GsapIllustration>
 
-          <div className="mt-5 flex flex-col gap-4 rounded-[8px] border border-[#d7deea] bg-white/80 p-4 backdrop-blur sm:flex-row sm:items-center sm:justify-between">
+          <motion.div
+            className="mt-5 flex flex-col gap-4 rounded-[8px] border border-[#d7deea] bg-white/80 p-4 backdrop-blur sm:flex-row sm:items-center sm:justify-between"
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          >
             <div className="flex items-center gap-3">
               <ul className="flex items-center">
                 {avatarList.map((avatar, index) => (
@@ -140,9 +175,10 @@ function HeroSection({ avatarList }: HeroSectionProps) {
             <div className="rounded-full bg-[#f47c20]/10 px-4 py-2 text-sm font-semibold text-[#a64807]">
               Matriz RJ
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
+      <AwakeKineticStrip />
     </section>
   );
 }

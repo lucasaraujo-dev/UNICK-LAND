@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { AwakeMagnetic } from "@/components/unik/awake-motion";
 import {
   Select,
   SelectContent,
@@ -113,7 +114,9 @@ const ContactForm = () => {
                     <SelectValue placeholder="Selecione um serviço" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="limpeza">Limpeza e conservação</SelectItem>
+                    <SelectItem value="limpeza">
+                      Limpeza e conservação
+                    </SelectItem>
                     <SelectItem value="suporte">Serviços de suporte</SelectItem>
                     <SelectItem value="propriedade">
                       Serviços à propriedade
@@ -155,13 +158,15 @@ const ContactForm = () => {
                 </Label>
               </div>
 
-              <Button
-                type="submit"
-                size="lg"
-                className="h-11 rounded-full bg-[#062a63] text-white hover:bg-[#083577]"
-              >
-                Enviar solicitação
-              </Button>
+              <AwakeMagnetic>
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="awake-sheen h-11 w-full rounded-full bg-[#062a63] text-white hover:bg-[#083577]"
+                >
+                  Enviar solicitação
+                </Button>
+              </AwakeMagnetic>
             </div>
           </form>
         </CardContent>

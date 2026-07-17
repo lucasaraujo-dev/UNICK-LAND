@@ -4,6 +4,7 @@ import Faq from "@/components/shadcn-space/blocks/faq-01/faq";
 import AgencyHeroSection from "@/components/shadcn-space/blocks/hero-01";
 import Navbar from "@/components/shadcn-space/blocks/navbar-01/navbar";
 import Services from "@/components/shadcn-space/blocks/services-01/services";
+import { AwakeAtmosphere } from "@/components/unik/awake-motion";
 import {
   FinalCtaSection,
   SegmentsSection,
@@ -15,6 +16,7 @@ export default function Page() {
     <>
       <Navbar />
       <main className="page-shell">
+        <AwakeAtmosphere />
         <AgencyHeroSection />
         <AboutAndStats01 />
         <Services />

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AwakeItem, AwakeMagnetic, AwakeReveal, AwakeStagger } from "@/components/unik/awake-motion";
 import { GsapIllustration } from "@/components/unik/gsap-illustration";
 import {
   Building2,
@@ -58,7 +59,7 @@ export function SegmentsSection() {
     <section id="segmentos" className="py-12 sm:py-16 lg:py-20">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 xl:px-16">
         <div className="flex flex-col gap-7">
-          <div className="flex flex-col gap-4">
+          <AwakeReveal className="flex flex-col gap-4">
             <p className="w-fit rounded-full border border-[#d7deea] bg-white px-4 py-2 text-sm font-semibold text-[#062a63]">
               Segmentos
             </p>
@@ -69,11 +70,11 @@ export function SegmentsSection() {
               A UNIK adapta equipes, processos e acompanhamento para operações
               residenciais, comerciais, industriais, hospitalares e de varejo.
             </p>
-          </div>
+          </AwakeReveal>
 
-          <div className="grid gap-3 sm:grid-cols-3">
+          <AwakeStagger className="grid gap-3 sm:grid-cols-3" delay={0.08}>
             {segmentHighlights.map((highlight) => (
-              <div
+              <AwakeItem
                 key={highlight}
                 className="rounded-[8px] border border-[#d7deea] bg-white/82 p-4"
               >
@@ -81,11 +82,11 @@ export function SegmentsSection() {
                 <p className="text-sm font-semibold leading-snug text-[#23324d]">
                   {highlight}
                 </p>
-              </div>
+              </AwakeItem>
             ))}
-          </div>
+          </AwakeStagger>
 
-          <div className="rounded-[8px] border border-[#d7deea] bg-white/70 p-3 shadow-[0_24px_70px_-58px_rgba(6,42,99,0.7)]">
+          <AwakeReveal className="rounded-[8px] border border-[#d7deea] bg-white/70 p-3 shadow-[0_24px_70px_-58px_rgba(6,42,99,0.7)]" delay={0.12}>
             <div className="grid gap-3 sm:grid-cols-2">
               {segments.map((segment) => (
                 <div
@@ -99,7 +100,7 @@ export function SegmentsSection() {
                 </div>
               ))}
             </div>
-          </div>
+          </AwakeReveal>
         </div>
 
         <div className="grid gap-5">
@@ -115,7 +116,7 @@ export function SegmentsSection() {
             </div>
           </GsapIllustration>
 
-          <div className="rounded-[8px] border border-[#d7deea] bg-white/88 p-5 shadow-[0_18px_55px_-46px_rgba(6,42,99,0.65)]">
+          <AwakeReveal className="rounded-[8px] border border-[#d7deea] bg-white/88 p-5 shadow-[0_18px_55px_-46px_rgba(6,42,99,0.65)]" delay={0.08}>
             <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
               <div className="flex items-center gap-2 text-[#062a63]">
                 <MapPinned className="h-5 w-5 text-[#f47c20]" />
@@ -146,7 +147,7 @@ export function SegmentsSection() {
                   </div>
                   <div className="mt-4 grid gap-2">
                     {region.states.map((state) => (
-                      <div
+                      <AwakeMagnetic
                         key={state.uf}
                         className="grid grid-cols-[3rem_1fr_auto] items-center gap-3 rounded-[8px] bg-white px-3 py-2"
                       >
@@ -172,13 +173,13 @@ export function SegmentsSection() {
                             Matriz
                           </span>
                         ) : null}
-                      </div>
+                      </AwakeMagnetic>
                     ))}
                   </div>
                 </div>
               ))}
             </div>
-          </div>
+          </AwakeReveal>
         </div>
       </div>
     </section>
@@ -208,7 +209,7 @@ export function TechnologySection() {
           />
         </div>
 
-        <div className="order-1 flex flex-col gap-6 lg:order-2">
+        <AwakeReveal className="order-1 flex flex-col gap-6 lg:order-2">
           <p className="w-fit rounded-full border border-[#d7deea] bg-white px-4 py-2 text-sm font-semibold text-[#062a63]">
             Tecnologia
           </p>
@@ -238,7 +239,7 @@ export function TechnologySection() {
               </div>
             ))}
           </div>
-        </div>
+        </AwakeReveal>
       </div>
     </section>
   );
@@ -252,7 +253,7 @@ export function FinalCtaSection() {
           @2026 Unik Facilites & Serviços
         </p>
       </div>
-      <div className="mx-auto max-w-7xl overflow-hidden rounded-[8px] border border-[#071638] bg-[#071638] px-6 py-10 text-white md:px-10">
+      <AwakeReveal className="mx-auto max-w-7xl overflow-hidden rounded-[8px] border border-[#071638] bg-[#071638] px-6 py-10 text-white md:px-10">
         <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#f47c20]">
@@ -269,7 +270,7 @@ export function FinalCtaSection() {
             Falar com comercial
           </a>
         </div>
-      </div>
+      </AwakeReveal>
     </section>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import Logo from "@/assets/logo/logo";
+import { AwakeMagnetic } from "@/components/unik/awake-motion";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -16,6 +17,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight, TextAlignJustify } from "lucide-react";
+import { motion } from "motion/react";
 import { useCallback, useEffect, useState } from "react";
 
 export type NavigationSection = {
@@ -33,22 +35,21 @@ const navigationData: NavigationSection[] = [
 ];
 
 const CollaborateButton = ({ className }: { className?: string }) => (
-  <Button
-    asChild
-    className={cn(
-      "group relative h-9 w-fit overflow-hidden rounded-full bg-[#062a63] p-1 ps-4 pe-11 text-xs font-semibold transition-all duration-500 hover:bg-[#083577] hover:ps-11 hover:pe-4",
-      className
-    )}
-  >
-    <a href="#contato">
-      <span className="relative z-10 transition-all duration-500">
-        Fale com a UNIK
-      </span>
-      <div className="absolute right-1 flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#062a63] transition-all duration-500 group-hover:right-[calc(100%-32px)] group-hover:rotate-45">
-        <ArrowUpRight size={14} />
-      </div>
-    </a>
-  </Button>
+  <AwakeMagnetic className={className}>
+    <Button
+      asChild
+      className="awake-sheen group relative h-9 w-fit overflow-hidden rounded-full bg-[#062a63] p-1 ps-4 pe-11 text-xs font-semibold transition-all duration-500 hover:bg-[#083577] hover:ps-11 hover:pe-4"
+    >
+      <a href="#contato">
+        <span className="relative z-10 transition-all duration-500">
+          Fale com a UNIK
+        </span>
+        <div className="absolute right-1 flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#062a63] transition-all duration-500 group-hover:right-[calc(100%-32px)] group-hover:rotate-45">
+          <ArrowUpRight size={14} />
+        </div>
+      </a>
+    </Button>
+  </AwakeMagnetic>
 );
 
 const Navbar = () => {
@@ -75,15 +76,27 @@ const Navbar = () => {
 
   return (
     <div>
-      <a
+      <motion.a
         href="#inicio"
         aria-label="Voltar para o início"
         className="fixed left-4 top-3 z-50 px-2 py-1 sm:left-8 lg:left-10"
+        initial={{ opacity: 0, y: -16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: [0.21, 0.47, 0.32, 0.98] }}
       >
         <Logo compact />
-      </a>
+      </motion.a>
 
-      <header className="fixed inset-x-0 top-4 z-40 bg-transparent">
+      <motion.header
+        className="fixed inset-x-0 top-4 z-40 bg-transparent"
+        initial={{ opacity: 0, y: -18, scale: 0.98 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{
+          duration: 0.72,
+          delay: 0.08,
+          ease: [0.21, 0.47, 0.32, 0.98]
+        }}
+      >
         <div className="mx-auto flex w-full max-w-7xl items-center justify-center px-4 sm:px-6">
           <nav
             className={cn(
@@ -99,7 +112,7 @@ const Navbar = () => {
                   <NavigationMenuItem key={navItem.title}>
                     <NavigationMenuLink
                       href={navItem.href}
-                      className="rounded-full px-2.5 py-1.5 text-xs font-semibold tracking-normal text-[#53617a] outline outline-transparent transition hover:bg-white hover:text-[#062a63] hover:shadow-xs lg:px-3"
+                      className="rounded-full px-2.5 py-1.5 text-xs font-semibold tracking-normal text-[#53617a] outline outline-transparent transition hover:-translate-y-0.5 hover:bg-white hover:text-[#062a63] hover:shadow-xs lg:px-3"
                     >
                       {navItem.title}
                     </NavigationMenuLink>
@@ -133,7 +146,7 @@ const Navbar = () => {
             </div>
           </nav>
         </div>
-      </header>
+      </motion.header>
     </div>
   );
 };
