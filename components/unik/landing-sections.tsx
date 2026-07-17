@@ -1,12 +1,16 @@
 import Image from "next/image";
-import { AwakeItem, AwakeMagnetic, AwakeReveal, AwakeStagger } from "@/components/unik/awake-motion";
+import {
+  AwakeItem,
+  AwakeReveal,
+  AwakeStagger
+} from "@/components/unik/awake-motion";
+import { InteractiveBrazilMap } from "@/components/unik/interactive-brazil-map";
 import { GsapIllustration } from "@/components/unik/gsap-illustration";
 import {
   Building2,
   CheckCircle2,
   Factory,
   Hospital,
-  MapPinned,
   QrCode,
   School,
   ShoppingBag,
@@ -32,26 +36,6 @@ const segmentHighlights = [
   "Rotinas por perfil de ambiente",
   "Equipe dimensionada por demanda",
   "Acompanhamento de execução"
-];
-
-const regions = [
-  {
-    name: "Sudeste",
-    summary: "Matriz e filiais operacionais",
-    states: [
-      { uf: "RJ", name: "Rio de Janeiro", detail: "Matriz", active: true },
-      { uf: "SP", name: "São Paulo", detail: "Filial operacional" },
-      { uf: "MG", name: "Minas Gerais", detail: "Filial operacional" }
-    ]
-  },
-  {
-    name: "Nordeste",
-    summary: "Atendimento regional estruturado",
-    states: [
-      { uf: "PE", name: "Pernambuco", detail: "Filial operacional" },
-      { uf: "RN", name: "Rio Grande do Norte", detail: "Filial operacional" }
-    ]
-  }
 ];
 
 export function SegmentsSection() {
@@ -86,7 +70,10 @@ export function SegmentsSection() {
             ))}
           </AwakeStagger>
 
-          <AwakeReveal className="rounded-[8px] border border-[#d7deea] bg-white/70 p-3 shadow-[0_24px_70px_-58px_rgba(6,42,99,0.7)]" delay={0.12}>
+          <AwakeReveal
+            className="rounded-[8px] border border-[#d7deea] bg-white/70 p-3 shadow-[0_24px_70px_-58px_rgba(6,42,99,0.7)]"
+            delay={0.12}
+          >
             <div className="grid gap-3 sm:grid-cols-2">
               {segments.map((segment) => (
                 <div
@@ -103,84 +90,7 @@ export function SegmentsSection() {
           </AwakeReveal>
         </div>
 
-        <div className="grid gap-5">
-          <GsapIllustration>
-            <div className="overflow-visible p-0">
-              <Image
-                src="/images/coverage-map-full.png"
-                alt="Mapa do Brasil usado na apresentação da UNIK"
-                width={560}
-                height={557}
-                className="h-auto w-full object-contain"
-              />
-            </div>
-          </GsapIllustration>
-
-          <AwakeReveal className="rounded-[8px] border border-[#d7deea] bg-white/88 p-5 shadow-[0_18px_55px_-46px_rgba(6,42,99,0.65)]" delay={0.08}>
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-              <div className="flex items-center gap-2 text-[#062a63]">
-                <MapPinned className="h-5 w-5 text-[#f47c20]" />
-                <p className="font-semibold">Onde atuamos</p>
-              </div>
-              <p className="text-sm font-medium text-[#53617a]">
-                Bases no RJ, SP, MG, PE e RN
-              </p>
-            </div>
-            <div className="mt-4 grid gap-4">
-              {regions.map((region) => (
-                <div
-                  key={region.name}
-                  className="rounded-[8px] border border-[#e1e7f0] bg-[#f8fafd] p-4"
-                >
-                  <div className="flex items-center justify-between gap-4">
-                    <div>
-                      <p className="text-base font-semibold text-[#071638]">
-                        {region.name}
-                      </p>
-                      <p className="text-xs font-medium text-[#53617a]">
-                        {region.summary}
-                      </p>
-                    </div>
-                    <span className="rounded-full bg-white px-3 py-1 text-xs font-bold text-[#062a63]">
-                      {region.states.length} bases
-                    </span>
-                  </div>
-                  <div className="mt-4 grid gap-2">
-                    {region.states.map((state) => (
-                      <AwakeMagnetic
-                        key={state.uf}
-                        className="grid grid-cols-[3rem_1fr_auto] items-center gap-3 rounded-[8px] bg-white px-3 py-2"
-                      >
-                        <span
-                          className={
-                            state.active
-                              ? "flex h-10 w-10 items-center justify-center rounded-full bg-[#f47c20] text-sm font-bold text-white"
-                              : "flex h-10 w-10 items-center justify-center rounded-full bg-[#062a63] text-sm font-bold text-white"
-                          }
-                        >
-                          {state.uf}
-                        </span>
-                        <div>
-                          <p className="text-sm font-semibold text-[#071638]">
-                            {state.name}
-                          </p>
-                          <p className="text-xs font-medium text-[#53617a]">
-                            {state.detail}
-                          </p>
-                        </div>
-                        {state.active ? (
-                          <span className="rounded-full bg-[#fff3e9] px-3 py-1 text-xs font-bold text-[#c95f0e]">
-                            Matriz
-                          </span>
-                        ) : null}
-                      </AwakeMagnetic>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </AwakeReveal>
-        </div>
+        <InteractiveBrazilMap />
       </div>
     </section>
   );

@@ -4,7 +4,11 @@ import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { AwakeItem, AwakeMagnetic, AwakeStagger } from "@/components/unik/awake-motion";
+import {
+  AwakeItem,
+  AwakeMagnetic,
+  AwakeStagger
+} from "@/components/unik/awake-motion";
 import { GsapIllustration } from "@/components/unik/gsap-illustration";
 import { motion } from "motion/react";
 import {
@@ -122,6 +126,7 @@ const Services = () => {
                 início ao fim.
               </p>
             </div>
+
             <AwakeStagger className="grid gap-3" delay={0.08}>
               {operationPillars.map((pillar) => (
                 <AwakeItem
@@ -137,6 +142,7 @@ const Services = () => {
                 </AwakeItem>
               ))}
             </AwakeStagger>
+
             <GsapIllustration>
               <Image
                 src="/images/services-illustration.png"
@@ -164,17 +170,14 @@ const Services = () => {
               >
                 <Card className="awake-sheen overflow-hidden rounded-[8px] border-[#d7deea] bg-white/90 p-0 shadow-[0_24px_65px_-52px_rgba(6,42,99,0.72)]">
                   <CardContent className="grid gap-0 p-0 md:grid-cols-[0.9fr_1.1fr]">
-                    <div className={`flex flex-col justify-between gap-7 p-6 md:p-8 ${service.panel}`}>
+                    <div
+                      className={`flex flex-col justify-between gap-7 p-6 md:p-8 ${service.panel}`}
+                    >
                       <div className="flex flex-col gap-5">
-                        <div className="flex items-center justify-between gap-4">
-                          <div
-                            className={`flex h-12 w-12 items-center justify-center rounded-full ${service.tone}`}
-                          >
-                            <service.icon size={24} />
-                          </div>
-                          <span className="rounded-full border border-current/15 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] opacity-75">
-                            Solução {String(index + 1).padStart(2, "0")}
-                          </span>
+                        <div
+                          className={`flex h-12 w-12 items-center justify-center rounded-full ${service.tone}`}
+                        >
+                          <service.icon size={24} />
                         </div>
                         <div className="flex flex-col gap-3">
                           <h3 className="text-2xl font-semibold tracking-tight">
@@ -187,7 +190,10 @@ const Services = () => {
                       </div>
                       <div className="grid gap-2">
                         {service.proof.map((proof) => (
-                          <div key={proof} className="flex items-center gap-2 text-sm font-semibold">
+                          <div
+                            key={proof}
+                            className="flex items-center gap-2 text-sm font-semibold"
+                          >
                             <CheckCircle2 className="h-4 w-4 shrink-0 text-[#f47c20]" />
                             <span>{proof}</span>
                           </div>

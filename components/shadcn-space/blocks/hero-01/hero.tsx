@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { AwakeKineticStrip, AwakeMagnetic } from "@/components/unik/awake-motion";
+import { AwakeMagnetic } from "@/components/unik/awake-motion";
 import { GsapIllustration } from "@/components/unik/gsap-illustration";
 import { motion } from "motion/react";
 import {
@@ -178,7 +178,6 @@ function HeroSection({ avatarList }: HeroSectionProps) {
           </motion.div>
         </motion.div>
       </div>
-      <AwakeKineticStrip />
     </section>
   );
 }
