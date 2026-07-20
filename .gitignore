@@ -25,3 +25,4 @@ pnpm-debug.log*
 tmp/
 UNICK LAND/
 public/images/validation-*.png
+*.zip
