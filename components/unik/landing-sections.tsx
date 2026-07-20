@@ -98,7 +98,10 @@ export function SegmentsSection() {
 
 export function TechnologySection() {
   return (
-    <section id="tecnologia" className="py-12 sm:py-16 lg:py-20">
+    <section
+      id="tecnologia"
+      className="pt-12 pb-4 sm:pt-16 sm:pb-6 lg:pt-20 lg:pb-8"
+    >
       <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:px-8 xl:px-16">
         <div className="order-2 grid gap-4 lg:order-1">
           <GsapIllustration>

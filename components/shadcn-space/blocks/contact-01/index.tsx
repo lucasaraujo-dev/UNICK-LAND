@@ -4,7 +4,7 @@ import { AwakeReveal } from "@/components/unik/awake-motion";
 
 const Contact = () => {
   return (
-    <section id="contato" className="py-12 md:py-20">
+    <section id="contato" className="pt-4 pb-12 md:pt-6 md:pb-16">
       <div className="max-w-7xl xl:px-16 lg:px-8 px-4 mx-auto">
         <div className="grid grid-cols-12 content-center justify-between gap-6 sm:gap-8 md:gap-0">
           <AwakeReveal className="w-full col-span-12 md:col-span-6">

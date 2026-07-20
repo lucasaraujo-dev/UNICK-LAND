@@ -52,9 +52,12 @@ const AboutUs = ({
   const isInView = useInView(statsRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="quem-somos" className="lg:py-20 sm:py-16 py-10">
+    <section
+      id="quem-somos"
+      className="pt-10 pb-4 sm:pt-14 sm:pb-6 lg:pt-16 lg:pb-8"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-16">
-        <div className="flex flex-col items-center justify-center gap-8 md:gap-16">
+        <div className="flex flex-col items-center justify-center gap-8 md:gap-12">
           <motion.div
             initial={{ y: -40, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
