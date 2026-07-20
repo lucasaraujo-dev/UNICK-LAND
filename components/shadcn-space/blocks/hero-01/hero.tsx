@@ -66,9 +66,12 @@ function HeroSection({ avatarList }: HeroSectionProps) {
               }}
               className="max-w-2xl text-base leading-relaxed text-[#53617a] sm:text-lg"
             >
-              A UNIK atende demandas de facilities, limpeza, suporte e
-              propriedade com matriz no Rio de Janeiro, filiais operacionais e
-              estrutura pronta para diferentes setores em todo o Brasil.
+              A <strong className="font-semibold text-[#071638]">UNIK</strong>{" "}
+              é uma empresa especializada em soluções de Facilities. Com matriz
+              no Rio de Janeiro, estrutura operacional própria e capacidade de
+              atendimento, oferece serviços personalizados para empresas de
+              diferentes portes e segmentos, garantindo Qualidade, Agilidade,
+              Conformidade e Excelência na execução.
             </motion.p>
           </div>
 

@@ -30,7 +30,6 @@ const navigationData: NavigationSection[] = [
   { title: "Serviços", href: "#servicos" },
   { title: "Segmentos", href: "#segmentos" },
   { title: "Tecnologia", href: "#tecnologia" },
-  { title: "FAQ", href: "#faq" },
   { title: "Contato", href: "#contato" }
 ];
 
