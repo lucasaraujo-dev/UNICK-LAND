@@ -25,6 +25,13 @@ interface ContactFormData {
   terms: boolean;
 }
 
+const serviceLabels: Record<string, string> = {
+  limpeza: "Limpeza e conservação",
+  suporte: "Serviços de suporte",
+  propriedade: "Serviços à propriedade",
+  multisservicos: "Combinação de serviços"
+};
+
 const ContactForm = () => {
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
@@ -34,6 +41,7 @@ const ContactForm = () => {
     message: "",
     terms: false
   });
+  const [feedback, setFeedback] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -48,6 +56,39 @@ const ContactForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!formData.service) {
+      setFeedback("Selecione o interesse principal antes de enviar.");
+      return;
+    }
+
+    if (!formData.terms) {
+      setFeedback("Autorize o contato comercial para enviar a solicitação.");
+      return;
+    }
+
+    const serviceLabel = serviceLabels[formData.service] ?? formData.service;
+    const subject = `Solicitação comercial - ${formData.company}`;
+    const body = [
+      "Olá, equipe UNIK.",
+      "",
+      "Recebi este contato pela landing page:",
+      "",
+      `Nome: ${formData.name}`,
+      `Empresa ou condomínio: ${formData.company}`,
+      `E-mail: ${formData.email}`,
+      `Interesse principal: ${serviceLabel}`,
+      "",
+      "Mensagem:",
+      formData.message
+    ].join("\n");
+
+    const mailtoUrl = `mailto:comercial@unikservicos.com.br?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    setFeedback("Abrindo seu e-mail para concluir o envio.");
+    window.location.href = mailtoUrl;
   };
 
   return (
@@ -106,9 +147,10 @@ const ContactForm = () => {
                 <Label htmlFor="service">Interesse principal</Label>
                 <Select
                   value={formData.service}
-                  onValueChange={(value) =>
-                    setFormData((prev) => ({ ...prev, service: value ?? "" }))
-                  }
+                  onValueChange={(value) => {
+                    setFeedback("");
+                    setFormData((prev) => ({ ...prev, service: value ?? "" }));
+                  }}
                 >
                   <SelectTrigger id="service" className="h-10! w-full shadow-xs">
                     <SelectValue placeholder="Selecione um serviço" />
@@ -157,6 +199,12 @@ const ContactForm = () => {
                   solicitação.
                 </Label>
               </div>
+
+              {feedback ? (
+                <p className="rounded-[8px] bg-[#fff3e9] px-3 py-2 text-sm font-semibold text-[#a64807]">
+                  {feedback}
+                </p>
+              ) : null}
 
               <AwakeMagnetic>
                 <Button
