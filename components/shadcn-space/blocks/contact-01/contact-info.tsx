@@ -58,7 +58,7 @@ const ContactInfo = () => {
         </div>
         <a
           href="https://www.unikservicos.com.br"
-          className="self-end text-sm font-semibold text-[#c95f0e]"
+          className="self-center text-sm font-semibold text-[#c95f0e]"
         >
           www.unikservicos.com.br
         </a>
