@@ -64,7 +64,7 @@ function HeroSection({ avatarList }: HeroSectionProps) {
                 delay: 0.12,
                 ease: [0.21, 0.47, 0.32, 0.98]
               }}
-              className="max-w-2xl text-base leading-relaxed text-[#53617a] sm:text-lg"
+              className="max-w-2xl text-lg leading-relaxed text-[#53617a] sm:text-xl"
             >
               A <strong className="font-semibold text-[#071638]">UNIK</strong>{" "}
               é uma empresa especializada em soluções de Facilities. Com matriz

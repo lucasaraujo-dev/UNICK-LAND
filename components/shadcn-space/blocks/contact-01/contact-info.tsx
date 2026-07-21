@@ -18,7 +18,7 @@ const ContactInfo = () => {
         </p>
       </div>
 
-      <div className="grid animate-in grid-cols-1 gap-5 slide-in-from-left-10 fade-in duration-1000 delay-100 fill-mode-both ease-in-out sm:grid-cols-2">
+      <div className="grid animate-in grid-cols-1 gap-5 slide-in-from-left-10 fade-in duration-1000 delay-100 fill-mode-both ease-in-out sm:grid-cols-[0.75fr_1.25fr]">
         <div className="flex gap-3 rounded-[8px] border border-[#d7deea] bg-white/82 p-4">
           <Phone className="mt-1 h-5 w-5 text-[#f47c20]" />
           <div className="flex flex-col gap-1">
@@ -37,7 +37,7 @@ const ContactInfo = () => {
             <p className="text-sm font-normal text-[#53617a]">E-mail</p>
             <a
               href="mailto:comercial@unikservicos.com.br"
-              className="break-all text-base font-semibold text-[#062a63]"
+              className="whitespace-nowrap text-[15px] font-semibold text-[#062a63] sm:text-base"
             >
               comercial@unikservicos.com.br
             </a>
@@ -58,7 +58,7 @@ const ContactInfo = () => {
         </div>
         <a
           href="https://www.unikservicos.com.br"
-          className="text-sm font-semibold text-[#c95f0e]"
+          className="self-end text-sm font-semibold text-[#c95f0e]"
         >
           www.unikservicos.com.br
         </a>

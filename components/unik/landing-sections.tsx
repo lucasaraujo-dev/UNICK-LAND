@@ -50,7 +50,7 @@ export function SegmentsSection() {
             <h2 className="max-w-3xl text-3xl font-semibold tracking-tight text-[#071638] sm:text-5xl">
               Atendimento para ambientes que exigem rotina, presença e padrão.
             </h2>
-            <p className="max-w-2xl text-base leading-relaxed text-[#53617a]">
+            <p className="max-w-2xl text-lg leading-relaxed text-[#53617a]">
               A UNIK adapta equipes, processos e acompanhamento para operações
               residenciais, comerciais, industriais, hospitalares e de varejo.
             </p>
@@ -129,7 +129,7 @@ export function TechnologySection() {
           <h2 className="max-w-3xl text-3xl font-semibold tracking-tight text-[#071638] sm:text-5xl">
             Controle documental, ordens de serviço e checklist via QR Code.
           </h2>
-          <p className="max-w-2xl text-base leading-relaxed text-[#53617a]">
+          <p className="max-w-2xl text-lg leading-relaxed text-[#53617a]">
             A UNIK apresenta um sistema integrado para auxiliar sua empresa na
             parte documental, organizar dados e informações em tempo real e
             formalizar o trabalho por meio de ordens de serviço.

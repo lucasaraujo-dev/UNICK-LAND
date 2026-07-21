@@ -120,7 +120,7 @@ const Services = () => {
               <h2 className="text-3xl font-semibold tracking-tight text-[#071638] sm:text-5xl">
                 Limpeza, suporte e propriedade em uma operação só.
               </h2>
-              <p className="text-base leading-relaxed text-[#53617a]">
+              <p className="text-lg leading-relaxed text-[#53617a]">
                 A UNIK estrutura frentes de facilities para quem precisa de
                 presença constante, resposta rápida e execução acompanhada do
                 início ao fim.
@@ -183,7 +183,7 @@ const Services = () => {
                           <h3 className="text-2xl font-semibold tracking-tight">
                             {service.title}
                           </h3>
-                          <p className="text-sm leading-relaxed opacity-75">
+                          <p className="text-base leading-relaxed opacity-75">
                             {service.description}
                           </p>
                         </div>

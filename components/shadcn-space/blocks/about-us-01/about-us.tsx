@@ -75,7 +75,7 @@ const AboutUs = ({
               A UNIK compreende a necessidade de cada cliente para entregar a
               estrutura certa, com alternativas práticas e resultados objetivos.
             </h2>
-            <p className="max-w-3xl text-center text-base leading-relaxed text-[#53617a]">
+            <p className="max-w-3xl text-center text-lg leading-relaxed text-[#53617a]">
               Com matriz no Rio de Janeiro e filiais operacionais em São Paulo,
               Minas Gerais, Rio Grande do Norte e Pernambuco, a empresa atua com
               expertise acumulada e infraestrutura pronta para diferentes
